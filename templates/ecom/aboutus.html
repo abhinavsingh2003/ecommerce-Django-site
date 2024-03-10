@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>EasyKart</title>
+  <style media="screen">
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFD580 !Important;
+  }
+
+  .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+  }
+
+  .about-section {
+      text-align: center;
+      margin-bottom: 30px;
+  }
+
+  .team-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+  }
+
+  .team-card {
+      width: 250px;
+      margin: 20px;
+      padding: 15px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+  }
+
+  .team-card img {
+      border-radius: 50%;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+  }
+
+  .team-card a {
+      color: #3498db;
+      text-decoration: none;
+  }
+  </style>
+</head>
+
+<body style="background-color:#f7f7f7;">
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %}
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+  <br><br><br>
+ 
+  <div class="container">
+
+    <div class="about-section">
+        <h1>About Us - EasyKart</h1>
+        <p>Welcome to EasyKart, your one-stop destination for all your shopping needs. We aim to provide high-quality products and excellent service to make your shopping experience delightful.</p>
+    </div>
+
+    <div class="team-section">
+        <div class="team-card">
+            <img src="static\images\abhinavpic.jpeg" alt="Team Member 1">
+            <h2>Abhinav Singh</h2>
+            <p>project leader</p>
+            <a href="https://www.linkedin.com/in/johndoe/" target="_blank">LinkedIn Profile</a>
+        </div>
+
+        <div class="team-card">
+            <img src="static\images\blank photo.jpg" alt="Team Member 2">
+            <h2>Tushar</h2>
+            <p>frontend</p>
+            <a href="https://www.linkedin.com/in/janesmith/" target="_blank">LinkedIn Profile</a>
+        </div>
+
+        <div class="team-card">
+            <img src="static\images\blank photo.jpg" alt="Team Member 3">
+            <h2>Intakab</h2>
+            <p>teammate</p>
+            <a href="https://www.linkedin.com/in/bobjohnson/" target="_blank">LinkedIn Profile</a>
+        </div>
+    </div>
+
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+  {% include "ecom/footer.html" %}
+</body>
+<!--
+developed By :Abhinav Singh
+-->
+
+</html>
